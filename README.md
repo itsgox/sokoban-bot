@@ -2,9 +2,11 @@
 
 Sokoban is a popular game that I wanted to bring to Discord as a bot. I know PolyMars already did a bot like this, but i wanted to do my own version!
 
+You can add my 24/7 [Sokoban Bot](https://itsgox.com/sokoban), or you can run your own version of the bot following the next steps!
+
 ## Installation
 
-To run your own **Sokoban Bot**, you will need to download the following npm packages:
+To run your own **Sokoban Bot**, you will need to download the files from this repository, and the following npm packages:
 
 ```bash
 npm install discord.js
@@ -16,7 +18,7 @@ npm install nodemon
 
 ## Add your Token
 
-Create a **.env** file outside the **src** folder, and add your **Token** next to "TOKEN=" like in the example.
+Create a **.env** file outside the **src** folder, and add your bot's **token** next to "TOKEN=" like in the example.
 
 ```bash
 TOKEN=your-token
