@@ -1,0 +1,1 @@
+npx nodemon -T src/sokoban.ts
