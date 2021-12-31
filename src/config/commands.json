@@ -2,5 +2,5 @@
     "list": [
         { "name": "play", "description": "Start a Sokoban Game", "action": "add" }
     ],
-    "settings": { "guildID": "your-id", "type": "local/global" }
+    "settings": { "guildID": "your-id" }
 }
