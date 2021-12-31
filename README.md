@@ -6,7 +6,7 @@ You can add my 24/7 [Sokoban Bot](https://itsgox.com/sokoban), or you can run yo
 
 ## Installation
 
-To run your own **Sokoban Bot**, you will need: **Node and NPM** installed, the [bot files](https://github.com/itsgox/sokoban-bot/releases/tag/v1.0.0), and the following npm packages:
+To run your own **Sokoban Bot**, you will need: **Node and NPM** installed, the [bot files](https://github.com/itsgox/sokoban-bot/releases), and the following npm packages:
 
 ```bash
 npm install discord.js
