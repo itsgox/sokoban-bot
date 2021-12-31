@@ -1,7 +1,6 @@
 // @ts-nocheck
 import Discord from 'discord.js'
 import emojis from '../config/emojis.json'
-import { collector } from './extensions/collector'
 
 export const newLevel = async (client, int, Author, User, channel, guild, level, lastReload, size) => {
 
