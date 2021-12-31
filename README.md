@@ -28,7 +28,7 @@ TOKEN=your-token
 
 Go to **src/config/commands.json** and set your **Server ID**.
 
-```json
+```bash
 ...
     "settings": { "guildID": "your-id" }
 }
