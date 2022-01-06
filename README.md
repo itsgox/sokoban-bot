@@ -18,10 +18,10 @@ npm install nodemon
 
 ## Add your Token
 
-Create a **.env** file outside the **src** folder, and add your bot's **token** next to "TOKEN=" like in the example.
+Change the **.env.example** file to **.env**, and add your bot's **token** after **=**, like in the example.
 
 ```bash
-TOKEN=your-token
+TOKEN=123456789
 ```
 
 ## Add Server ID
