@@ -14,30 +14,22 @@ npm install discord.js @discordjs/builders
 npm install ts-node
 npm install typescript
 npm install dotenv
-npm install nodemon
 ```
 or just
 ```bash
-npm install discord.js @discordjs/builders ts-node typescript dotenv nodemon
+npm install discord.js @discordjs/builders ts-node typescript dotenv
 ```
 
-## Add your Token
+## Add your Token & Server ID
 
-Change the **.env.example** file to **.env**, and add your bot's **token** after **=** like in the example.
+Change the **.env.example** file to **.env**<br>
+Add your **Bot Token** & **Server ID**.
 
 ```bash
 TOKEN=123456789
+SERVER_ID=123456789
 ```
-
-## Add Server ID
-
-Go to **src/config/commands.json** and set your **Server ID**.
-
-```bash
-...
-    "settings": { "guildID": "your-id" }
-}
-```
+*This is just an example, add your own Token & ID*
 
 ## Usage
 
@@ -48,7 +40,7 @@ sh start.sh
 ```
 or
 ```bash
-npx nodemon src/index.ts
+ts-node src/index.ts
 ```
 
 ## License

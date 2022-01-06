@@ -1,1 +1,1 @@
-npx nodemon src/index.ts
+ts-node src/index.ts

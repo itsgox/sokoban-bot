@@ -1,12 +1,14 @@
 // @ts-nocheck
 import { SlashCommandBuilder } from '@discordjs/builders'
 import commandList from '../config/commands.json'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const builder = (client) => {
 
     //SETTINGS
 
-    let guildID = commandList.settings['guildID']
+    let guildID = process.env.SERVER_ID
     let commands = commandList.list.filter(x => x.name !== '')
     
     let position = 0
