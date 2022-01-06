@@ -1,1 +1,1 @@
-npx nodemon -T src/sokoban.ts
+npx nodemon src/index.ts

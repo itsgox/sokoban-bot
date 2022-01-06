@@ -48,7 +48,7 @@ sh start.sh
 ```
 or
 ```bash
-npx nodemon src/sokoban.ts
+npx nodemon src/index.ts
 ```
 
 ## License
