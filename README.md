@@ -1,5 +1,7 @@
 # Sokoban Bot
 
+⚠️ THIS BOT WILL BE REWRITTEN IN JAVASCRIPT ⚠️
+
 Sokoban is a popular game that I wanted to bring to Discord as a bot. I know PolyMars already did a bot like this, but I wanted to do my own version!
 
 You can add my 24/7 [Sokoban Bot](https://itsgox.com/sokoban), or you can run your own version of the bot following the next steps!
