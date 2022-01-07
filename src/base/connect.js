@@ -23,5 +23,8 @@ module.exports = async (client) => {
 
         const builder = require('./builder.js')
         builder(client)
+
+        const status = require('./status.js')
+        status(client)
     }
 }
