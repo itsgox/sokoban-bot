@@ -1,7 +1,6 @@
-// @ts-nocheck
-import commands from '../config/commands.json'
+const commands = require('../config/commands.json')
 
-export const cmdHandler = (client) => {
+module.exports = (client) => {
     
     client.on('interactionCreate', async int => {
 
@@ -32,8 +31,8 @@ export const cmdHandler = (client) => {
         int.deferReply().then(() => search())
 
         async function search() {
-            const path = `../commands/play.ts`
-            const { newLevel } = await import(path)
+            const path = `../commands/play.js`
+            const newLevel = require(path)
             newLevel(client, int, Author, User, channel, guild, input)
         }
     })

@@ -1,13 +1,12 @@
-// @ts-nocheck
-import Discord from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const collector = async (client, int, Author, User, channel, guild, level, goals, lastReload, dataGrid, size, table, color, Player, startTime) => {
+module.exports = async (client, int, Author, User, channel, guild, level, goals, dataGrid, size, table, color, Player, startTime) => {
 
-    const { genButtons } = await import('./buttons.ts')
-    const { genTime } = await import('./time.ts')
-    const { checkBox } = await import('./box.ts')
-    const { newLevel } = await import('../play.ts')
+    const genButtons = require('./buttons.js')
+    const genTime = require('./time.js')
+    const checkBox = require('./box.js')
+    const newLevel = require('../play.js')
 
     //COLLECTOR
 
@@ -23,18 +22,30 @@ export const collector = async (client, int, Author, User, channel, guild, level
 
         if (button.customId === 'restart') {
             movement.stop()
-            await newLevel(client, int, Author, User, channel, guild, level, lastReload, size)
+            await newLevel(client, int, Author, User, channel, guild, level, size)
             return
         }
         else if (button.customId === 'next') {
             movement.stop()
-            await newLevel(client, int, Author, User, channel, guild, level+1, lastReload, size)
+            await newLevel(client, int, Author, User, channel, guild, level+1, [size[0]+1,size[1]+1])
             return
         }
         else if (button.customId === 'stop') {
             movement.stop()
             let visualGrid = dataGrid.map(x => x.emoji).join('')
             table.setDescription(visualGrid)
+            int.editReply({
+                embeds: [table],
+                components: []
+            })
+            return
+        }
+        else if (button.customId === 'end') {
+            movement.stop()
+            table = new Discord.MessageEmbed()
+            .setTitle(`${Author.username}'s Sokoban`.replace("s's","s'").replace("S's","S'"))
+            .setDescription('Congrats! You completed all 8 levels of the game!\nWe wish you could play more, but Discord has a message size limit...')
+            .setColor(color.hex)
             int.editReply({
                 embeds: [table],
                 components: []
@@ -86,20 +97,6 @@ export const collector = async (client, int, Author, User, channel, guild, level
 
     async function endLevel() {
 
-        if (level === 5) {
-
-            let table = new Discord.MessageEmbed()
-            .setTitle(`${Author.username}'s Sokoban`.replace("s's","s'").replace("S's","S'"))
-            .setDescription('Congrats! You finished the 5 Levels of the Game!')
-            .setColor(color.hex)
-    
-            int.editReply({
-                embeds: [table],
-                components: []
-            })
-            return
-        }
-
         let time = await genTime(Date.now()-startTime)
         
         let playerPos = dataGrid.indexOf(dataGrid.filter(x => x.type === 'player')[0])
@@ -118,6 +115,28 @@ export const collector = async (client, int, Author, User, channel, guild, level
             .setCustomId('stop')
             .setStyle('SECONDARY')
         )
+        if (level === 7) {
+            buttons = new Discord.MessageActionRow()
+            .addComponents(
+                new Discord.MessageButton()
+                .setLabel('Final Level')
+                .setCustomId('next')
+                .setStyle('SECONDARY'),
+                new Discord.MessageButton()
+                .setLabel('Stop')
+                .setCustomId('stop')
+                .setStyle('SECONDARY')
+            )
+        }
+        else if (level === 8) {
+            buttons = new Discord.MessageActionRow()
+            .addComponents(
+                new Discord.MessageButton()
+                .setLabel('End')
+                .setCustomId('end')
+                .setStyle('SECONDARY')
+            )
+        }
 
         int.editReply({
             embeds: [table],

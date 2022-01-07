@@ -1,8 +1,7 @@
-// @ts-nocheck
-import Discord from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const genButtons = async (dataGrid, size, Player, isStuck) => {
+module.exports = async (dataGrid, size, Player, isStuck) => {
 
     let player = dataGrid.map(x => x.emoji).indexOf(Player)
     let around = [

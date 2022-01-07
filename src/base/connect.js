@@ -1,8 +1,7 @@
-// @ts-nocheck
-import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 dotenv.config()
 
-export const connect = async (client) => {
+module.exports = async (client) => {
 
     //BOT LOGIN
 
@@ -19,10 +18,10 @@ export const connect = async (client) => {
 
     async function start() {
         
-        const { cmdHandler } = await import('./handler.ts')
+        const cmdHandler = require('./handler.js')
         cmdHandler(client)
 
-        const { builder } = await import('./builder.ts')
+        const builder = require('./builder.js')
         builder(client)
     }
 }

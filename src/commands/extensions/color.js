@@ -1,8 +1,7 @@
-// @ts-nocheck
-import Discord from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const genColor = async () => {
+module.exports = async () => {
 
     let colors = [
         { name: "orange", hex: "#f4900d" },

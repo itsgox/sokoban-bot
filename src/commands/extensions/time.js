@@ -1,8 +1,7 @@
-// @ts-nocheck
-import Discord from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const genTime = (milliseconds) => {
+module.exports = (milliseconds) => {
 
     let days = milliseconds / (1000*60*60*24)
     let absoluteDays = Math.floor(days)

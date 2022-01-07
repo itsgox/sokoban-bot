@@ -1,8 +1,7 @@
-// @ts-nocheck
-import Discord from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const genGrid = async (width, height, color) => {
+module.exports = async (width, height, color) => {
 
     //SETTINGS
 
@@ -53,9 +52,9 @@ export const genGrid = async (width, height, color) => {
 
         //ADD BLOCK TO GRID
         
-        grid.push({ emoji: emoji, type: type, isWall: isWall })
+        grid.push({ emoji: emoji, type: type, isWall: isWall, position: grid.length })
         if (last) {
-            grid.push({ emoji: '\n', type: 'break', isWall: false })
+            grid.push({ emoji: '\n', type: 'break', isWall: false, position: grid.length })
             lines++
         }
         i++

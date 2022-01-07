@@ -1,8 +1,7 @@
-// @ts-nocheck
-import Discord from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const genPlayer = async () => {
+module.exports = async () => {
 
     let emojis = [
         ':grin:',

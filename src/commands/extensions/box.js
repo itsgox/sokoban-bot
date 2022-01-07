@@ -1,8 +1,7 @@
-// @ts-nocheck
-import Discord, { Channel } from 'discord.js'
-import emojis from '../../config/emojis.json'
+const Discord = require('discord.js')
+const emojis = require('../../config/emojis.json')
 
-export const checkBox = async (dataGrid, size) => {
+module.exports = async (dataGrid, size) => {
     
     //GET BOX POSITIONS
 

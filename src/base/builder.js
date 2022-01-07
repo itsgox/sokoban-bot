@@ -1,10 +1,9 @@
-// @ts-nocheck
-import { SlashCommandBuilder } from '@discordjs/builders'
-import commandList from '../config/commands.json'
-import dotenv from 'dotenv'
+const { SlashCommandBuilder } = require('@discordjs/builders')
+const commandList = require('../config/commands.json')
+const dotenv = require('dotenv')
 dotenv.config()
 
-export const builder = (client) => {
+module.exports = (client) => {
 
     //SETTINGS
 
@@ -16,18 +15,18 @@ export const builder = (client) => {
         let data = new SlashCommandBuilder()
         .setName(commands[position].name)
         .setDescription(commands[position].description.replaceAll('**',''))
-        eval(`${commands[position].action.charAt(0).toUpperCase()+commands[position].action.slice(1)}(data)`)
+        eval(`${commands[position].action}(data)`)
         position++
     }
     while (position < commands.length)
 
     //FUNCTIONS
 
-    async function Add(data) {
+    async function add(data) {
         await client.guilds.cache.get(guildID)?.commands.create(data)
     }
     
-    async function Remove(data) {
+    async function remove(data) {
         const command = await client.guilds.cache.get(guildID)?.commands.create(data)
         await client.guilds.cache.get(guildID)?.commands.delete(command.id)
     }
