@@ -30,6 +30,7 @@ To run the bot, just use this command on the terminal:
 
 ```bash
 sh start.sh
+```
 
 ## License
 [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/)
