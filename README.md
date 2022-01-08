@@ -14,7 +14,7 @@ npm install discord.js @discordjs/builders dotenv
 ## Add your Token & Server ID
 
 Change the **.env.example** file to **.env**<br>
-Add your **Bot Token** & **Server ID**.
+Add your **[Bot Token](https://www.writebots.com/discord-bot-token/)** & **[Server ID](https://www.alphr.com/discord-find-server-id/)**.
 
 ```bash
 TOKEN=123456789
