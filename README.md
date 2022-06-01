@@ -1,7 +1,6 @@
 # Sokoban Bot
 
-Sokoban is a popular game that I wanted to bring to Discord as a bot. I know PolyMars already did a bot like this, but I wanted to do my own version!<br>
-You can add my 24/7 [Sokoban Bot](https://itsgox.com/sokoban-bot), or you can run your own version of the bot following the next steps!
+Sokoban is a popular game that I wanted to bring to Discord as a bot. I know PolyMars already did a bot like this, but I wanted to do my own version!
 
 ## Installation
 
@@ -24,7 +23,7 @@ SERVER_ID=123456789
 
 ## Usage
 
-To run the bot, just use this command on the terminal:
+To run the bot, just use this command in the terminal:
 
 ```bash
 sh start.sh
